@@ -1,0 +1,111 @@
+% Styly pro studijní materiály | Martin Trnecka 2020
+% Styl je inspirován pracemi Edwarda Tufta a Richarda Feynmana
+\documentclass{skripta}
+
+% název textu a jeho autor
+\def\title{Šablona pro tvorbu učebních materiálů}
+\def\author{Martin Trnečka}  
+
+\usepackage{lipsum}  
+
+\begin{document}
+
+% úvodní strana, úvodní text a obsah
+\intro{Šablona pro psaní skript a učebních materiálů inspirována pracemi Edwarda Tufta a Richarda Feynmana. Šablona je stále ve vývoji. Poslední aktualizace proběhla \today.}
+
+
+
+
+
+
+
+\chapter{Ukázková kapitola}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum magna, posuere in tempus ut, semper bibendum lectus. Morbi faucibus orci augue, ac elementum turpis dapibus at. Cras quis ipsum a dui rutrum finibus eget quis ipsum. Aliquam erat volutpat. Morbi sit amet tempor orci. Nunc ac maximus quam.\sidenote{Základem stylu je element {\tt sidenote}, který umožňuje psát rozsáhlé a dobře viditelné poznámky.}
+
+\lipsum[1][5-8]\sidenote[1.5em]{V případě potřeby je možné {\tt sidenote} posunout.}
+
+\begin{code}
+\begin{lstlisting}
+zdrojový kód, ukázka skriptu
+\end{lstlisting}
+\end{code}
+
+\lipsum[1][2-4]
+
+\begin{code}
+\begin{lstlisting}[style=numbered]
+číslovaný
+zdrojový kód, ukázka skriptu
+\end{lstlisting}
+\end{code}
+
+Pro tabulky je použito prostředí {\tt tabularx}, například tabulka~\ref{tab:laborator}.
+
+\begin{table}[htb]
+\small
+\sidecaption{\label{tab:laborator}Tabulku je možné popisovat pomocí {\tt sidecaption}, případně klasickým způsobem.}
+\begin{tabularx}{\textwidth}{llll}
+\toprule
+Stroj & Operační systém & IP adresa ve vnitřní síti\\
+\midrule
+PC1 & Debian GNU/Linux & {\tt 192.168.1.10}\\
+PC2 & Metasploitable 2 & {\tt 192.168.1.11}\\
+PC3 & Kali Linux & {\tt 192.168.1.12}\\
+PC4 & MS Windows Server 2008 R2 & {\tt 192.168.1.13}\\
+PC5 & Kali Linux & {\tt 192.168.1.21}\\
+\bottomrule
+\end{tabularx} 
+\end{table}
+
+
+Donec a tristique libero. Quisque quis malesuada arcu. Sed pharetra, ipsum eget semper egestas, tortor nunc feugiat erat, et rutrum magna lacus quis metus. Nunc non tincidunt urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean tincidunt ex vel libero vehicula, sit amet sollicitudin urna mollis. Integer et tortor aliquam nisl venenatis aliquet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Suspendisse pretium pulvinar libero, in ornare risus. Suspendisse vitae arcu ligula. Aliquam lobortis molestie ex vel tincidunt. Cras sed lorem varius augue lacinia varius quis ac felis. Sed vestibulum vehicula enim, vulputate pharetra orci dapibus non. Duis elementum diam a est aliquet, non pharetra ex porttitor. Nulla tincidunt convallis erat, non fringilla ligula porta non. Nulla tincidunt arcu mattis erat aliquam, et cursus metus pretium.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{images/mikrotik-routerboard.jpg}
+\sidecaption[-17em]{Analogicky lze pomocí {\tt sidecaption} lze popisovat i obrázky.}
+\end{figure}
+
+V případě potřeby je možné využít {\tt fullwidth} prostředí, které vysází svůj obsah přes celou šířku a to včetně prostoru pro poznámky.
+
+\begin{fullwidth}
+\begin{code}
+\begin{lstlisting}
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-01-29 06:57 CET
+Nmap scan report for 192.168.1.11
+Host is up (0.0015s latency).
+Not shown: 977 closed ports
+
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+...
+\end{lstlisting}
+\end{code}
+\end{fullwidth}
+
+
+\section{Sekce}
+Maecenas imperdiet ac enim ac elementum. Donec nec turpis ac sapien sodales dictum. Donec congue ut tellus et aliquet. Praesent venenatis sollicitudin augue sed vehicula. Integer blandit auctor massa vitae lacinia. Nam facilisis, odio id accumsan pretium, ante nisl maximus nibh, et efficitur nunc risus vestibulum nunc. Suspendisse non orci nec orci semper rutrum.
+
+
+\subsection{Subsekce}
+Morbi consequat, odio id sollicitudin laoreet, nibh est gravida mi, eu tempus libero nisl at magna. Integer risus velit, malesuada at nisi non, placerat lacinia ipsum. Vestibulum interdum nisl sed nisi aliquam, sed viverra nisi fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris eu eros id enim luctus laoreet. Vestibulum convallis vehicula tellus, ut consequat odio sagittis in. Fusce orci nunc, ultrices tempus molestie id, aliquam id metus. Etiam id leo at elit tempor aliquet egestas in justo. Vivamus consequat tellus erat, vel posuere magna ornare ac.
+
+K dispozici je několik boxů.\sideguide[-6em]{Maecenas imperdiet ac enim ac elementum. Donec nec turpis ac sapien sodales dictum. Donec congue ut tellus et aliquet. Praesent venenatis sollicitudin augue sed vehicula. Integer blandit auctor massa vitae lacinia. }
+
+\sidetask[2em]{Maecenas imperdiet ac enim ac elementum. Donec nec turpis ac sapien sodales dictum. Donec congue ut tellus et aliquet. Praesent venenatis sollicitudin augue sed vehicula. Integer blandit auctor massa vitae lacinia. }
+
+\sidequestion[11.5em]{Maecenas imperdiet ac enim ac elementum. Donec nec turpis ac sapien sodales dictum. Donec congue ut tellus et aliquet. Praesent venenatis sollicitudin augue sed vehicula. Integer blandit auctor massa vitae lacinia. }
+
+Suspendisse pretium pulvinar libero, in ornare risus. Suspendisse vitae arcu ligula. Aliquam lobortis molestie ex vel tincidunt. Cras sed lorem varius augue lacinia varius quis ac felis. Sed vestibulum vehicula enim, vulputate pharetra orci dapibus non. Duis elementum diam a est aliquet, non pharetra ex porttitor. Nulla tincidunt convallis erat, non fringilla ligula porta non. Nulla tincidunt arcu mattis erat aliquam, et cursus metus pretium.
+
+Suspendisse pretium pulvinar libero, in ornare risus. Suspendisse vitae arcu ligula. Aliquam lobortis molestie ex vel tincidunt. Cras sed lorem varius augue lacinia varius quis ac felis. Sed vestibulum vehicula enim, vulputate pharetra orci dapibus non. Duis elementum diam a est aliquet, non pharetra ex porttitor. Nulla tincidunt convallis erat, non fringilla ligula porta non. Nulla tincidunt arcu mattis erat aliquam, et cursus metus pretium.
+
+Maecenas imperdiet ac enim ac elementum. Donec nec turpis ac sapien sodales dictum. Donec congue ut tellus et aliquet. Praesent venenatis sollicitudin augue sed vehicula. Integer blandit auctor massa vitae lacinia. Nam facilisis, odio id accumsan pretium, ante nisl maximus nibh, et efficitur nunc risus vestibulum nunc. Suspendisse non orci nec orci semper rutrum.
+
+
+\end{document}
+
